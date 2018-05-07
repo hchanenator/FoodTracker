@@ -14,7 +14,11 @@ class MealTableViewController: UITableViewController {
     var meals = [Meal]();
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
+        
+        // Use the edit button item provided by the table view controller
+        navigationItem.leftBarButtonItem = editButtonItem;
+        
 
         // load sample data
         loadSampleMeals();
@@ -74,17 +78,17 @@ class MealTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            meals.remove(at: indexPath.row);    // deletes the object from the list
+            tableView.deleteRows(at: [indexPath], with: .fade)  // deletes the row from the table view
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.
