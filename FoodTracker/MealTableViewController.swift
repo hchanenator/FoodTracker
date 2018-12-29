@@ -84,7 +84,7 @@ class MealTableViewController: UITableViewController {
 
 
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             meals.remove(at: indexPath.row);    // deletes the object from the list
@@ -136,7 +136,7 @@ class MealTableViewController: UITableViewController {
             let selectedMeal = meals[indexPath.row];
             mealDetailViewController.meal = selectedMeal;
         default:
-            fatalError("Unexpected Segue Identifier: \(segue.identifier)");
+            fatalError("Unexpected Segue Identifier: \(String(describing: segue.identifier))");
         }
     }
 
